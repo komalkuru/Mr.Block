@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Enemy Patrooling between the walls
+/// </summary>
+/// 
+
 public class EnemyController : MonoBehaviour
 {
     private float ySpeed;
@@ -9,7 +14,6 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 localScale;
 
-    // Start is called before the first frame update
     void Start()
     {
         localScale = transform.localScale;
@@ -33,10 +37,10 @@ public class EnemyController : MonoBehaviour
 
     void LateUpdate()
     {
-        CheckWhereToFace();
+        CheckWall();
     }
 
-    void CheckWhereToFace()
+    void CheckWall()
     {
         if (localScale.y < 0 || localScale.y > 0)
             localScale.y *= -1;
