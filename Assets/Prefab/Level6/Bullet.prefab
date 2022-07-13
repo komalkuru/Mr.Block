@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3868650548788243167}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  gameOverController: {fileID: 0}
   shootEffect: {fileID: 635633048602616913, guid: 6bbd7eba0e34f2141b62f9775fc5ee46,
     type: 3}
 --- !u!114 &3868650548788243167

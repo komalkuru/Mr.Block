@@ -8,15 +8,8 @@ namespace PlayerMovement
     public class PlayerController : MonoBehaviour
     {
         public float moveSpeed;
-        private Rigidbody2D rb2d;
-        private BoxCollider2D boxcollider;
-        [SerializeField] private GameOverController gameOverController;
-
-        void Start()
-        {
-            rb2d = GetComponent<Rigidbody2D>();
-            boxcollider = GetComponent<BoxCollider2D>();
-        }
+        [SerializeField] private GameOverController gameOverController;        
+        bool gameOver = true;
 
         void Update()
         {
@@ -73,7 +66,12 @@ namespace PlayerMovement
             {
                 GameWin();
             }
-        }        
+            if (collider.CompareTag("Bullet") && gameOver == true)
+            {
+                gameOverController.Invoke("GameOver", 0.1f);
+                gameOver = false;
+            }
+        }
 
         void GameWin()
         {

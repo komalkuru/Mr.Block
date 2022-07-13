@@ -15,12 +15,9 @@ public class Bullet : MonoBehaviour
     private Transform player;
     private Vector2 target;
 
-    //[SerializeField] private ParticleController particle;
-    //[SerializeField] private GameOverController gameOverController;
-
     public ParticleSystem shootEffect;
 
-    void Start()
+void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = new Vector2(player.position.x, player.position.y);
@@ -41,7 +38,6 @@ public class Bullet : MonoBehaviour
         if(collision.CompareTag("Player") || collision.gameObject.GetComponent<Bullet>() != null) // when bullet touches the player it will detroy and call the particles.
         {            
             DestroyBullet();
-            GetComponent<GameOverController>().enabled = true;
         }
     }
 

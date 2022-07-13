@@ -32,6 +32,8 @@ public class EnemyAIChasing : MonoBehaviour
     {
         randomSpot = Random.Range(0, respawnPoint.Length);
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        timeBtwShots = startTimeShots;
     }
 
     void Update()

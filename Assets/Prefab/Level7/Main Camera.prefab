@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2989942219792080103
+--- !u!1 &583271930711939764
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2989942219792079899}
-  - component: {fileID: 2989942219792080100}
-  - component: {fileID: 2989942219792080102}
-  - component: {fileID: 2989942219792080101}
+  - component: {fileID: 583271930711939656}
+  - component: {fileID: 583271930711939767}
+  - component: {fileID: 583271930711939765}
+  - component: {fileID: 583271930711939766}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -19,13 +19,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2989942219792079899
+--- !u!4 &583271930711939656
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2989942219792080103}
+  m_GameObject: {fileID: 583271930711939764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,13 +33,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &2989942219792080100
+--- !u!20 &583271930711939767
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2989942219792080103}
+  m_GameObject: {fileID: 583271930711939764}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
@@ -76,27 +76,27 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2989942219792080102
+--- !u!81 &583271930711939765
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2989942219792080103}
+  m_GameObject: {fileID: 583271930711939764}
   m_Enabled: 1
---- !u!114 &2989942219792080101
+--- !u!114 &583271930711939766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2989942219792080103}
+  m_GameObject: {fileID: 583271930711939764}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 2989942219792079899}
+  volumeTrigger: {fileID: 583271930711939656}
   volumeLayer:
     serializedVersion: 2
     m_Bits: 1024
