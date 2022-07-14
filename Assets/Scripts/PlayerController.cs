@@ -59,7 +59,7 @@ namespace PlayerMovement
         {
             if(collider.CompareTag("Enemy"))
             {
-                gameOverController.Invoke("GameOver", 0f);
+                gameOverController.GameOver();
             }
 
             if(collider.GetComponent<Door>())

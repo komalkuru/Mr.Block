@@ -10,8 +10,6 @@ public class GameOverController : MonoBehaviour
 {
     public void GameOver()
     {
-        Debug.Log("before call");
         gameObject.SetActive(true);
-        Debug.Log("After call");
     }
 }

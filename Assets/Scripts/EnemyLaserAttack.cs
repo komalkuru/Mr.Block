@@ -11,6 +11,7 @@ public class EnemyLaserAttack : MonoBehaviour
     [SerializeField] private Gradient redColor;
     [SerializeField] private GameOverController gameOverController;
     [SerializeField] private PlayerDiedParticles playerDiedParticles;
+    [SerializeField] private Transform player;
     private bool playerDetect = true;
 
     void Start()
@@ -32,10 +33,10 @@ public class EnemyLaserAttack : MonoBehaviour
 
             if (hitInfo.collider.CompareTag("Player") && playerDetect)
             {
+                playerDiedParticles.bulletShootEffect();
                 Destroy(hitInfo.collider.gameObject);
-                playerDiedParticles.Invoke("bulletShootEffect", 0f);
-                playerDetect = false;
-                //gameOverController.Invoke("GameOver", 0.2f);                
+                gameOverController.Invoke("GameOver", 0.7f);
+                playerDetect = false;               
             }
         }
         lineOfSight.SetPosition(0, transform.position);
