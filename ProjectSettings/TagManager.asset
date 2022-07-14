@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Laser
   - Bullet
+  - HitPoint
   layers:
   - Default
   - TransparentFX

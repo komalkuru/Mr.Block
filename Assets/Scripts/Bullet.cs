@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     public ParticleSystem shootEffect;
 
-void Start()
+    void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = new Vector2(player.position.x, player.position.y);

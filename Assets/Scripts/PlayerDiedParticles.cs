@@ -1,17 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerDiedParticles : MonoBehaviour
 {
     public ParticleSystem diedEffect;
+    [SerializeField] private Transform player;
+    private bool flag = true;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     public void bulletShootEffect()
     {
-        if (diedEffect != null)
+        if (diedEffect != null && flag)
         {
-            ParticleSystem instance = Instantiate(diedEffect, transform.position, Quaternion.identity);
+            gameObject.SetActive(true);
+            ParticleSystem instance = Instantiate(diedEffect, player.position, Quaternion.identity);
             Destroy(instance.gameObject, instance.main.duration + instance.main.startLifetime.constantMax);
+            flag = false;
         }
     }
 }

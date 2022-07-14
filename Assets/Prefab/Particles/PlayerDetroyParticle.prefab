@@ -4825,3 +4825,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diedEffect: {fileID: 708648557958931051}
+  hitPoint: {fileID: 219897961676988462, guid: 291f0150f0bc023419e717632983254a, type: 3}
