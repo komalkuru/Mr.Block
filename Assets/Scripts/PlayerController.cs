@@ -1,14 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
+
 
 namespace PlayerMovement
 {
     public class PlayerController : MonoBehaviour
     {
         public float moveSpeed;
-        [SerializeField] private GameOverController gameOverController;        
+        [SerializeField] private GameOverController gameOverController;
+        
         bool gameOver = true;
 
         void Update()
@@ -59,23 +59,20 @@ namespace PlayerMovement
         {
             if(collider.CompareTag("Enemy"))
             {
+                Debug.Log("Game Over");
                 gameOverController.GameOver();
             }
 
-            if(collider.GetComponent<Door>())
+            /*if(collider.CompareTag("Door"))
             {
-                GameWin();
-            }
+                
+            }*/
+
             if (collider.CompareTag("Bullet") && gameOver == true)
             {
-                gameOverController.Invoke("GameOver", 0.1f);
+                gameOverController.GameOver();
                 gameOver = false;
             }
-        }
-
-        void GameWin()
-        {
-            SceneManager.LoadScene(1);
         }
     }
 }

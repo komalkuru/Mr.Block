@@ -11,7 +11,7 @@ public class EnemyChasesPlayer : MonoBehaviour
     public float speed;
     public float stopPosition;
     private Transform target;
-    //[SerializeField] private GameOverController gameOverController;
+    [SerializeField] private GameOverController gameOverController;
 
     void Start()
     {
@@ -30,8 +30,8 @@ public class EnemyChasesPlayer : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            //gameOverController.Invoke("GameOver", 0f);
-            GetComponent<GameOverController>().enabled = true;
+            gameOverController.GameOver();
+            //GetComponent<GameOverController>().enabled = true;
         }
     }
 }

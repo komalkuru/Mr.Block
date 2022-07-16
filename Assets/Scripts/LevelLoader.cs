@@ -18,6 +18,7 @@ public class LevelLoader : MonoBehaviour
     {
         Debug.Log(LevelName);
         LevelStatus levelStatus = LevelManager.Instance.GetLevelStatus(LevelName);
+        Debug.Log("levelstatus" +levelStatus);
 
 
         switch (levelStatus)
@@ -27,7 +28,6 @@ public class LevelLoader : MonoBehaviour
                 break;
 
             case LevelStatus.Unlocked:
-                GetComponent<UnlockLevel>().enabled = true;
                 SceneManager.LoadScene(LevelName);
                 break;
 

@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using Assets.Scripts.Level;
 
+/// <summary>
+/// Used this script to find the door instead of the tag.
+/// </summary>
 public class Door : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private LevelCompleteMenuController levelCompleteMenuController;
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            //Game is over           
+            Debug.Log("Level finished by the player");
+            LevelManager.Instance.MarkCurrentLevelComplete();
+            levelCompleteMenuController.LevelComplete();
+        }
     }
 }

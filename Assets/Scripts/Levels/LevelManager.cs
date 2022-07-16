@@ -34,7 +34,9 @@ namespace Assets.Scripts.Level
         public void MarkCurrentLevelComplete()
         {
             //set level status to complete and unlock the next level
+            Debug.Log("MarkCurrentLevelComplete");
             int currentSceneIndex = Array.FindIndex(Levels, level => level == SceneManager.GetActiveScene().name);
+            Debug.Log(currentSceneIndex);
             SetLevelStatus(Levels[currentSceneIndex], LevelStatus.Completed);
             int nextSceneIndex = currentSceneIndex + 1;
             Debug.Log("index incresed by 1");

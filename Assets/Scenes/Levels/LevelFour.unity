@@ -1675,6 +1675,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded8d2e0bfbaeb14fb2ff979adff955f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  retryButton: {fileID: 0}
+  backButton: {fileID: 0}
+  exitButton: {fileID: 0}
 --- !u!224 &5197225421656750924
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1834,6 +1837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   gameOverController: {fileID: 5197225421656750919}
+  levelCompleteMenuController: {fileID: 0}
 --- !u!212 &5504607006589839098
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1913,7 +1917,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5504607006589839046}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.82, y: 0.06, z: 0}
+  m_LocalPosition: {x: 4.15, y: 0.06, z: 0}
   m_LocalScale: {x: 0.20000002, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
