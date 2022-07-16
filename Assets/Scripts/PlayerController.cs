@@ -1,22 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
+
 
 namespace PlayerMovement
 {
     public class PlayerController : MonoBehaviour
     {
         public float moveSpeed;
-        private Rigidbody2D rb2d;
-        private BoxCollider2D boxcollider;
         [SerializeField] private GameOverController gameOverController;
-
-        void Start()
-        {
-            rb2d = GetComponent<Rigidbody2D>();
-            boxcollider = GetComponent<BoxCollider2D>();
-        }
+        
+        bool gameOver = true;
 
         void Update()
         {
@@ -66,18 +59,20 @@ namespace PlayerMovement
         {
             if(collider.CompareTag("Enemy"))
             {
-                gameOverController.Invoke("GameOver", 0f);
+                Debug.Log("Game Over");
+                gameOverController.GameOver();
             }
 
-            if(collider.GetComponent<Door>())
+            /*if(collider.CompareTag("Door"))
             {
-                GameWin();
-            }
-        }        
+                
+            }*/
 
-        void GameWin()
-        {
-            SceneManager.LoadScene(1);
+            if (collider.CompareTag("Bullet") && gameOver == true)
+            {
+                gameOverController.GameOver();
+                gameOver = false;
+            }
         }
     }
 }
