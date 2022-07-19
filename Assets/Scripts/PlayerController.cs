@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 namespace PlayerMovement
 {
     public class PlayerController : MonoBehaviour

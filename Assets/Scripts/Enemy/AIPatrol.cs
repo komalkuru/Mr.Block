@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// AI Enemy is patrolling in whole board
@@ -37,8 +35,7 @@ public class AIPatrol : MonoBehaviour
             } else
             {
                 waitTime -= Time.deltaTime;
-            }
-                
+            }                
         }
     }
 }

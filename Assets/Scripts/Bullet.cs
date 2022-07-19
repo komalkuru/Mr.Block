@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// The enemy shoots at the player. When the bullet touches the player, it will be destroyed and particles will

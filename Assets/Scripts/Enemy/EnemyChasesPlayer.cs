@@ -28,13 +28,4 @@ public class EnemyChasesPlayer : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
     }
-
-    /* private void OnTriggerEnter2D(Collider2D collider)
-     {
-        if (collider.CompareTag("Player"))
-        {
-            gameOverController.GameOver();
-            //GetComponent<GameOverController>().enabled = true;
-        }
-     }*/
 }
