@@ -50,17 +50,23 @@ public class EnemyAIChasing : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
         }
 
-        if(timeBtwShots <= 0)
+        BulletInstantiate();
+    }
+
+    void BulletInstantiate()
+    {
+        if (timeBtwShots <= 0)
         {
             Instantiate(bullet, transform.position, Quaternion.identity);
             timeBtwShots = startTimeShots;
-        } else
+        }
+        else
         {
             timeBtwShots -= Time.deltaTime;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) // Enemy respawn
     {
         if(collision.gameObject.CompareTag("Wall") || collision.gameObject.GetComponent<Wall>() != null)
         {

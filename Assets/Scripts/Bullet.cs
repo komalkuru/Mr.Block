@@ -14,9 +14,9 @@ public class Bullet : MonoBehaviour
 
     private Transform player;
     private Vector2 target;
+    private bool flag = true;
 
     public ParticleSystem shootEffect;
-
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -35,9 +35,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") || collision.gameObject.GetComponent<Bullet>() != null) // when bullet touches the player it will detroy and call the particles.
+        if((collision.CompareTag("Player") || collision.gameObject.GetComponent<Bullet>() != null) && flag) // when bullet touches the player it will detroy and call the particles.
         {            
             DestroyBullet();
+            Destroy(gameObject);
+            flag = false;
         }
     }
 
@@ -55,4 +57,5 @@ public class Bullet : MonoBehaviour
             Destroy(instance.gameObject, instance.main.duration + instance.main.startLifetime.constantMax);
         }
     }
+    
 }

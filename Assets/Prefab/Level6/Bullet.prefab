@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2135763838059651141}
   - component: {fileID: 9075859750407248007}
   - component: {fileID: 301413538090505326}
-  - component: {fileID: 3868650548788243167}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -113,18 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  gameOverController: {fileID: 0}
   shootEffect: {fileID: 635633048602616913, guid: 6bbd7eba0e34f2141b62f9775fc5ee46,
     type: 3}
---- !u!114 &3868650548788243167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4621609357483551864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ded8d2e0bfbaeb14fb2ff979adff955f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  gameOverController: {fileID: 8760310804929172626, guid: 0eee35910ded4144198b5aed0202b41a,
+    type: 3}

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Level
 {
@@ -33,11 +34,9 @@ namespace Assets.Scripts.Level
 
         public void MarkCurrentLevelComplete()
         {
-            //set level status to complete and unlock the next level
             Debug.Log("MarkCurrentLevelComplete");
             int currentSceneIndex = Array.FindIndex(Levels, level => level == SceneManager.GetActiveScene().name);
-            Debug.Log(currentSceneIndex);
-            SetLevelStatus(Levels[currentSceneIndex], LevelStatus.Completed);
+            Debug.Log(currentSceneIndex);SetLevelStatus(Levels[currentSceneIndex], LevelStatus.Completed);
             int nextSceneIndex = currentSceneIndex + 1;
             Debug.Log("index incresed by 1");
 
@@ -45,7 +44,7 @@ namespace Assets.Scripts.Level
             {
                 Debug.Log("Going on next scene");
                 SetLevelStatus(Levels[nextSceneIndex], LevelStatus.Unlocked);
-            }
+            }  
         }
 
         public LevelStatus GetLevelStatus(string level)
@@ -53,10 +52,11 @@ namespace Assets.Scripts.Level
             LevelStatus levelStatus = (LevelStatus)PlayerPrefs.GetInt(level, 0);
             return levelStatus;
         }
+
         public void SetLevelStatus(string level, LevelStatus levelStatus)
         {
             PlayerPrefs.SetInt(level, (int)levelStatus);
-            Debug.Log("Setting Level:" + level + " Status: " + levelStatus);
+            Debug.Log("Setting Level : " + level + " Status: " + levelStatus);
         }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class UnlockLevel : MonoBehaviour
 {
-    [SerializeField] private GameObject lockedObject;
+    public Image imageChild;
+
     public void UnlockCurrentLevel()
     {
-        Destroy(lockedObject);
+        Destroy(imageChild);
     }
 }

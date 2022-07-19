@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PlayerMovement;
 
 /// <summary>
 /// Enemy chases the Player.
@@ -12,9 +13,11 @@ public class EnemyChasesPlayer : MonoBehaviour
     public float stopPosition;
     private Transform target;
     [SerializeField] private GameOverController gameOverController;
+    private float distance;
 
     void Start()
     {
+        
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
@@ -26,12 +29,12 @@ public class EnemyChasesPlayer : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
+    /* private void OnTriggerEnter2D(Collider2D collider)
+     {
         if (collider.CompareTag("Player"))
         {
             gameOverController.GameOver();
             //GetComponent<GameOverController>().enabled = true;
         }
-    }
+     }*/
 }

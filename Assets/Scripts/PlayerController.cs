@@ -1,5 +1,4 @@
-﻿using UnityEngine.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 namespace PlayerMovement
@@ -8,8 +7,9 @@ namespace PlayerMovement
     {
         public float moveSpeed;
         [SerializeField] private GameOverController gameOverController;
-        
+        [SerializeField] Door door;
         bool gameOver = true;
+        bool Flag = true;
 
         void Update()
         {
@@ -57,22 +57,18 @@ namespace PlayerMovement
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
-            if(collider.CompareTag("Enemy"))
+            if(collider.CompareTag("Enemy") && door.gameWin != false && Flag)
             {
                 Debug.Log("Game Over");
                 gameOverController.GameOver();
+                Flag = false;
             }
 
-            /*if(collider.CompareTag("Door"))
+            if (collider.CompareTag("Bullet") && gameOver && door.gameWin != false)
             {
-                
-            }*/
-
-            if (collider.CompareTag("Bullet") && gameOver == true)
-            {
-                gameOverController.GameOver();
+                gameOverController.Invoke("GameOver", 0.2f);
                 gameOver = false;
-            }
+            }            
         }
     }
 }
